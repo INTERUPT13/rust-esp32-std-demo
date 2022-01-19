@@ -38,3 +38,31 @@ build-std-features = ["panic_immediate_abort"]
 # is by running "cargo pio espidf menuconfig" (that is, if using the pio builder)
 #ESP_IDF_SDKCONFIG = { value = "sdkconfig.release;sdkconfig.debug" }
 ESP_IDF_SDKCONFIG_DEFAULTS = { value = "sdkconfig.defaults;sdkconfig.defaults.esp32;sdkconfig.defaults.esp32s2" }
+
+
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source."https://github.com/esp-rs-compat/getrandom.git"]
+git = "https://github.com/esp-rs-compat/getrandom.git"
+replace-with = "vendored-sources"
+
+[source."https://github.com/esp-rs-compat/polling"]
+git = "https://github.com/esp-rs-compat/polling"
+replace-with = "vendored-sources"
+
+[source."https://github.com/esp-rs-compat/smol"]
+git = "https://github.com/esp-rs-compat/smol"
+replace-with = "vendored-sources"
+
+[source."https://github.com/esp-rs-compat/socket2"]
+git = "https://github.com/esp-rs-compat/socket2"
+replace-with = "vendored-sources"
+
+[source."https://github.com/yuri91/ili9341-rs"]
+git = "https://github.com/yuri91/ili9341-rs"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
